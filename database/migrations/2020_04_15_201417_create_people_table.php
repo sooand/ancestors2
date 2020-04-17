@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePersonTable extends Migration
+class CreatePeopleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePersonTable extends Migration
      */
     public function up()
     {
-        Schema::create('person', function (Blueprint $table) {
+        Schema::create('people', function (Blueprint $table) {
             $table->id();
             $table->foreignId('gender_id')->constrained();
             $table->string('first_name');
@@ -24,6 +24,18 @@ class CreatePersonTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        Schema::table('users', function(Blueprint $table) {
+            $table->foreignId('person_id')->index()->nullable();
+        });
+
+        Schema::table('name_history', function(Blueprint $table) {
+            $table->foreignId('person_id')->constrained()->onDelete('cascade');
+        });
+
+        Schema::table('address_history', function(Blueprint $table) {
+            $table->foreignId('person_id')->constrained();
+        });
     }
 
     /**
@@ -33,6 +45,6 @@ class CreatePersonTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('person');
+        Schema::dropIfExists('people');
     }
 }

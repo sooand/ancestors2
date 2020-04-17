@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddressHistoryTable extends Migration
+class CreateGendersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateAddressHistoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('address_history', function (Blueprint $table) {
+        Schema::create('genders', function (Blueprint $table) {
             $table->id();
-            $table->date('from');
-            $table->date('to');
-            $table->string('description', 75);
+            $table->string('title', 75);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +28,6 @@ class CreateAddressHistoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('address_history');
+        Schema::dropIfExists('genders');
     }
 }

@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('locale', 5)->default('en_GB');
-            $table->foreignId('person_id')->constrained();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

@@ -15,7 +15,6 @@ class CreateNameHistoryTable extends Migration
     {
         Schema::create('name_history', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('person_id')->constrained()->onDelete('cascade');
             $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name');
