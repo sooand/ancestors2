@@ -1,0 +1,21 @@
+:root {
+    --black: #000;
+    --white: #fff;
+    --paper-white: #f2f2f2;
+    --light-blue: #35b9f8;
+    --dark-gray: #343a40;
+    --light-gray: #f8f9fa;
+}
+
+.light-theme {
+    --bg: var(--paper-white);
+    --primary: var(--white);
+    --secondary: var(--light-blue);
+    --text: var(--dark-gray);
+}
+
+.dark-theme {
+    --bg: var(--dark-gray);
+    --primary: var(--black);
+    --text: var(--light-gray);
+}

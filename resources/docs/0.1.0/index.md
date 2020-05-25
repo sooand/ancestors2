@@ -1,0 +1,11 @@
+- ## Get Started
+    - [Overview](/{{route}}/{{version}}/overview)
+- ## Authentication
+    - [Oauth client](/{{route}}/{{version}}/{{authentication/client}})
+    - [Server to server auth](#)
+    - [Personal access token](#)
+- ## API
+    - [People](#)
+    - [Relations](#)
+    - [Documents](#)
+    

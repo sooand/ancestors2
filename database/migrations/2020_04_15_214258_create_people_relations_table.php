@@ -16,9 +16,9 @@ class CreatePeopleRelationsTable extends Migration
         Schema::create('people_relations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('relation_type_id')->constraint();
-            $table->integer('from_person_id')->index()->unsigned();
+            $table->foreignId('from_person_id')->index()->unsigned();
             $table->foreign('from_person_id')->references('id')->on('people')->onDelete('no action');
-            $table->integer('to_person_id')->index()->unsigned();
+            $table->foreignId('to_person_id')->index()->unsigned();
             $table->foreign('to_person_id')->references('id')->on('people')->onDelete('no action');
             $table->dateTime('valid_from')->nullable();
             $table->dateTime('valid_to')->nullable();

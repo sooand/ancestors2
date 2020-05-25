@@ -1,8 +1,23 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=OpenSans,arial');
+
+@import '~vuesax/dist/vuesax.css';
 
 // Variables
+// overriding Bootstrap base variables with Ancestors own
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+
+@import 'theme';
+
+body {
+    font-family: OpenSans, arial;
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+#app {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--bg);
+    color: var(--text);
+}
